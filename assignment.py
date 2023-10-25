@@ -4,10 +4,13 @@ board = [
     "......#........#......",
     "......#........#......",
     "......#........#####..",
-    "....###............#..",
-    "....#............###..",
+    "....####...........#..",
+    "....#........#######..",
     "....##############....",
 ]
+for s in input_board:
+            if len(s) != len(input_board[0]):
+            return("input boards length invalid")
 def flood_fill(input_board, old, new, x, y):
     if (x > 7 or x < 0 or y > 21 or y < 0):
         return
@@ -18,6 +21,7 @@ def flood_fill(input_board, old, new, x, y):
       flood_fill(input_board, old, new, x, y + 1)
       flood_fill(input_board, old, new, x, y - 1)
       return input_board
+       
 
 modified_board = flood_fill(input_board=board, old=".", new="~", x=1, y=1)
 
