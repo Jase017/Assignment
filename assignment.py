@@ -8,10 +8,12 @@ board = [
     "....#........#######..",
     "....##############....",
 ]
-for s in input_board:
-            if len(s) != len(input_board[0]):
-            return("input boards length invalid")
+
 def flood_fill(input_board, old, new, x, y):
+    input_board:list[str]
+    for s in input_board:
+        if len(s) != len(input_board[0]):
+            return("input boards length invalid")
     if (x > 7 or x < 0 or y > 21 or y < 0):
         return
     elif(input_board[x][y] == old):
